@@ -10,15 +10,16 @@ if st.button("Calculate BMI"):
     bmi = w / ((h / 100) ** 2)
     st.write(f"**Your BMI:** {bmi:.2f}")
     if bmi < 18.5:
-        st.warning("Underweight")
+        st.warning("You are Underweight, nalla sapudanum")
     elif 18.5 <= bmi <= 24.9:
-        st.success("Normal weight")
+        st.success("Normal weight, nee polachiduva da")
     elif 25 <= bmi <= 29.9:
-        st.info("Overweight")
+        st.info("Overweight - gundu punda")
     elif 30 <= bmi <= 39.9:
-        st.error("Obese")
+        st.error("Obese - kolutha punda")
     else:
-        st.error("Extremely Obese")
+        st.error("Extremely Obese - ithu enna vaira illa paanaya")
+
 
 
 
