@@ -3,7 +3,8 @@ import streamlit as st
 
 # Page config
 st.set_page_config(page_title="Number of Days Lived Calculator", layout="centered")
-
+st.title("Number of Days Lived Calculator")
+st.subheader("Enter your Date of Birth")
 # Background color
 page_bg = """
 <style>
@@ -25,3 +26,4 @@ if st.button("Calculate Number of Days"):
     today = date.today()
     days_lived = (today - dob).days
     st.success(f"You have lived {days_lived} days.")
+
