@@ -12,22 +12,31 @@ page_bg = """
     .stApp {
         background-color: #004953;
     }
+    .stSelectbox {
+        border-radius: 10px;
+    }
 </style>
 """
 st.markdown(page_bg, unsafe_allow_html=True)
 
-# Get max possible year (today)
+# Years
 max_year = date.today().year
 min_year = 1900
 years = list(range(max_year, min_year - 1, -1))
-months = list(range(1, 13))
+
+# Month names full
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 days = list(range(1, 32))
 
-# Sub-boxes for each date part
+# Input selectors
 year = st.selectbox("Year", years, index=0)
-month = st.selectbox("Month", months, index=date.today().month - 1)
+month_str = st.selectbox("Month", month_names, index=date.today().month - 1)
+month = month_names.index(month_str) + 1  # convert to integer month
 day = st.selectbox("Day", days, index=date.today().day - 1)
 
+# Calculate days lived
 if st.button("Calculate Number of Days"):
     try:
         dob = date(year, month, day)
