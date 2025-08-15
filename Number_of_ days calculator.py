@@ -31,7 +31,7 @@ month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 days = list(range(1, 32))
 
 # Input selectors
-day = st.selectbox("Day", days, index=date.today().day - 1)
+day = st.selectbox("Date", days, index=date.today().day - 1)
 month_str = st.selectbox("Month", month_names, index=date.today().month - 1)
 month = month_names.index(month_str) + 1  # convert to integer month
 year = st.selectbox("Year", years, index=0)
@@ -47,4 +47,5 @@ if st.button("Calculate Number of Days"):
         st.success(f"You have lived {days_lived} days.")
     except ValueError:
         st.error("Invalid date selected (e.g., February 30th). Please pick a valid date.")
+
 
