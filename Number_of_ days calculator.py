@@ -1,24 +1,27 @@
 from datetime import date
 import streamlit as st
 
+# Page config
 st.set_page_config(page_title="Number of Days Lived Calculator", layout="centered")
+
+# Background color
+page_bg = """
+<style>
+    .stApp {
+        background-color: #f0f8ff;
+    }
+</style>
+"""
+st.markdown(page_bg, unsafe_allow_html=True)
+
+# Title
 st.title("Number of Days Lived Calculator")
 
-# Inputs
-st.subheader("Enter your Date of Birth")
-day = st.number_input("Day (dd)", min_value=1, max_value=31, step=1)
-month = st.number_input("Month (mm)", min_value=1, max_value=12, step=1)
-year = st.number_input("Year (yyyy)", min_value=1, max_value=date.today().year, step=1)
+# Date picker input
+dob = st.date_input("Date of Birth", min_value=date(1900, 1, 1), max_value=date.today())
 
 # Button click
 if st.button("Calculate Number of Days"):
-    try:
-        dob = date(year, month, day)  # Validate date
-        today = date.today()
-        days_lived = (today - dob).days
-        st.success(f"You have lived {days_lived} days.")
-    except ValueError:
-        st.error("❌ Try a valid DOB")
-
-
-
+    today = date.today()
+    days_lived = (today - dob).days
+    st.success(f"You have lived {days_lived} days.")
