@@ -9,7 +9,7 @@ st.subheader("Enter your Date of Birth")
 page_bg = """
 <style>
     .stApp {
-        background-color: #f0f8ff;
+        background-color: #004953;
     }
 </style>
 """
@@ -26,4 +26,5 @@ if st.button("Calculate Number of Days"):
     today = date.today()
     days_lived = (today - dob).days
     st.success(f"You have lived {days_lived} days.")
+
 
