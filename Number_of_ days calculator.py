@@ -1,5 +1,5 @@
 
->>> from datetime import date
+from datetime import date
 ... import streamlit as st
 ... 
 ... st.set_page_config(page_title="Number of Days Lived Calculator", layout="centered")
@@ -19,4 +19,5 @@
 ...         days_lived = (today - dob).days
 ...         st.success(f"You have lived {days_lived} days.")
 ...     except ValueError:
+
 
