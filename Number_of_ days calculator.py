@@ -47,7 +47,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.title("🎈 Number of Days Lived Calculator 🎈")
+st.title("🎈 Number of Days Lived Calculator 🎈", layout="centered)
 st.subheader("📅 Enter your Date of Birth")
 
 # Year, month, and day pickers as columns
@@ -81,4 +81,5 @@ if st.button("Calculate Number of Days"):
             st.balloons()
     except ValueError:
         st.error("Invalid date selected (e.g., February 30th). Please pick a valid date.")
+
 
